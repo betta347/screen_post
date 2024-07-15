@@ -2,7 +2,7 @@
 * You can arrange a chat with anyone you want through this application.
 
 # Preview
-![Screen Post](https://github.com/betta347/betta347/blob/main/screen_post.mp4)
+![Screen Post](https://github.com/betta347/betta347/blob/main/gifs/screen_post.gif?raw=true)
 
 LICENSE!
 ------------
