@@ -83,28 +83,51 @@ class _TelegramScreenState extends State<TelegramScreen> {
             userNotifier: userNotifier,
             myModelNotifier: myModelNotifier,
           ),
-          body: SingleChildScrollView(
-            controller: scrollController,
-            physics: const BouncingScrollPhysics(),
-            padding: const EdgeInsets.symmetric(vertical: 10),
-            child: Expanded(
-              child: ValueListenableBuilder(
-                valueListenable: messagesNotifier,
-                builder: (context, messages, child) => ListView(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  children: messages.map((message) {
-                    return MessageItem(
-                      swipedMessageNotifier: swipedMessageNotifier,
-                      focusNode: focusNode,
-                      message: message,
-                      isLastMessage: messages.last == message,
-                    );
-                  }).toList(),
-                ),
-              ),
-            ),
+          body: ValueListenableBuilder(
+            valueListenable: messagesNotifier,
+            builder: (context, messages, child) => messages.isEmpty
+                ? Center(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white.withOpacity(0.1),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      padding: const EdgeInsets.all(16),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            AppImages.gifYes,
+                            height: 100,
+                          ),
+                          const SizedBox(height: 10),
+                          SizedBox(
+                            width: MediaQuery.of(context).size.width * 0.5,
+                            child: Text(
+                              'You ready to chat with Telegram',
+                              style: Theme.of(context).textTheme.bodyMedium,
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  )
+                : ListView(
+                    controller: scrollController,
+                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+                    shrinkWrap: true,
+                    physics: const BouncingScrollPhysics(),
+                    children: messages.map((message) {
+                      return MessageItem(
+                        swipedMessageNotifier: swipedMessageNotifier,
+                        focusNode: focusNode,
+                        message: message,
+                        isLastMessage: messages.last == message,
+                      );
+                    }).toList(),
+                  ),
           ),
           bottomNavigationBar: BottomTextField(
             swipedMessageNotifier: swipedMessageNotifier,
