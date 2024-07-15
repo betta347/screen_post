@@ -1,16 +1,13 @@
-# screen_post
+## Telegram user interface. 
+* You can arrange a chat with anyone you want through this application.
 
-A new Flutter project.
+# Preview
+![Screen Post](https://github.com/mi-ghanshyam/vimeo_video_player/blob/master/assets/vimeo.gif?raw=true)
 
-## Getting Started
+LICENSE!
+------------
+**Screen Post** is [Licensed](https://github.com/betta347/screen_post/blob/default/LICENSE)
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Let us know!
+------------
+Just join my telegram community [here](https://t.me/+kvsxAPluXpdmODQy)
