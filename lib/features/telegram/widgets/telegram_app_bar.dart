@@ -56,8 +56,13 @@ class TelegramAppBar extends StatelessWidget implements PreferredSizeWidget {
               },
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(50),
-                child: user.userPhoto.contains("http")
-                    ? Image.network(width: 44, height: 44, user.userPhoto)
+                child: user.userPhoto.contains("assets")
+                    ? Image.asset(
+                        width: 44,
+                        height: 44,
+                        user.userPhoto,
+                        fit: BoxFit.cover,
+                      )
                     : Image.file(
                         width: 44,
                         height: 44,

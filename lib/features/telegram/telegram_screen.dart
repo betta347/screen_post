@@ -42,12 +42,11 @@ class _TelegramScreenState extends State<TelegramScreen> {
       const UserModel(
         id: 1,
         name: 'Telegram',
-        userPhoto:
-            "https://store-images.s-microsoft.com/image/apps.55245.13537716651231321.3067a421-6c2f-48a9-b77c-1e38e19146e6.10e2aa49-52ca-4e79-9a61-b6422978afb9?h=210",
+        userPhoto: AppImages.tgLogo,
         lastSeen: 'service notifications',
         isOnline: false,
         isTyping: false,
-        isVerified: false,
+        isVerified: true,
       ),
     );
     messageController = TextEditingController()
