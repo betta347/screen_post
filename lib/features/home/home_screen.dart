@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:screen_post/core/extension/extension.dart';
 import 'package:screen_post/core/theme/app_icons.dart';
@@ -20,11 +22,15 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        systemOverlayStyle: const SystemUiOverlayStyle(
+          statusBarColor: Colors.transparent,
+          statusBarIconBrightness: Brightness.light,
+        ),
         title: const Text("Welcome to Screen Post"),
         actions: [
           GestureDetector(
             onTap: () {
-              launchUrlString("https://t.me/tuit1k");
+              launchUrlString("https://t.me/+kvsxAPluXpdmODQy");
             },
             child: Container(
               alignment: Alignment.center,
@@ -93,6 +99,34 @@ class _HomeScreenState extends State<HomeScreen> {
               isComingSoon: true,
             ),
           ],
+        ),
+      ),
+      bottomNavigationBar: GestureDetector(
+        onTap: () {
+          launchUrlString("https://t.me/+kvsxAPluXpdmODQy");
+        },
+        child: Container(
+          margin: const EdgeInsets.symmetric(vertical: 8),
+          padding: AppUtils.kPaddingAll16,
+          decoration: BoxDecoration(
+            color: context.color.telegram,
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              SvgPicture.asset(
+                AppIcons.telegram,
+                color: context.color.white,
+              ),
+              AppUtils.kGap6,
+              Text(
+                "Join our telegram chanel",
+                style: context.textStyle.regular20.copyWith(
+                  color: context.color.white,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
